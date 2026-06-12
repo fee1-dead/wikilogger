@@ -19,7 +19,7 @@ module.exports = {
             {
               inline: false,
               name: 'Open Source',
-              value: 'I am OSS at https://github.com/fee1-dead/wikilogger'
+              value: 'See https://github.com/fee1-dead/wikilogger for the source code of this bot'
             },
             {
               inline: false,
