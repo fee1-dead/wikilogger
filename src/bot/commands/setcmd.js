@@ -39,7 +39,7 @@ module.exports = {
           {
             type: ERIS_CONSTANTS.ApplicationCommandOptionTypes.INTEGER,
             name: 'amount',
-            description: 'The number of messages to create a paste entry with (must be >= 5 or <= 100, 10,000 for patreon bot)',
+            description: 'The number of messages to create a paste entry with (must be >= 5 or <= 100)',
             required: true,
             autocomplete: true,
             max_value: 100,
