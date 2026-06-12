@@ -41,13 +41,14 @@ module.exports = {
       .post(process.env.PASTE_CREATE_ENDPOINT)
       .set('Authorization', process.env.PASTE_CREATE_TOKEN)
       .set('Content-Type', 'text/plain')
+      .set('User-Agent', 'logger discord bot')
       .send(pasteString || 'No messages were able to be archived')
       .end((err, res) => {
         if (!err && res.statusCode === 200 && res.body.key) {
           interaction.editOriginalMessage({
             embeds: [{
               title: 'Success',
-              description: `Archived ${fetchedMessages.length} messages: https://haste.logger.bot/${res.body.key}.txt`,
+              description: `Archived ${fetchedMessages.length} messages: https://logger-discord-bot.toolforge.org/${res.body.key}.txt`,
               thumbnail: {
                 url: interaction.member.user.dynamicAvatarURL(null, 64)
               },

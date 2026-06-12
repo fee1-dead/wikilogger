@@ -39,12 +39,13 @@ async function paste (messages, guildID) {
       .post(process.env.PASTE_CREATE_ENDPOINT)
       .set('Authorization', process.env.PASTE_CREATE_TOKEN)
       .set('Content-Type', 'text/plain')
+      .set('User-Agent', 'logger discord bot')
       .send(pasteString || 'An error has occurred while fetching pastes. Please contact the bot author.')
       .end((err, res) => {
         if (!err && res.body && res.statusCode === 200 && res.body.key) {
           messageDeleteBulkEvent.embeds[0].fields.push({
             name: 'Link',
-            value: `https://haste.logger.bot/${res.body.key}.txt`
+            value: `https://logger-discord-bot.toolforge.org/${res.body.key}.txt`
           })
           send(messageDeleteBulkEvent)
         } else {

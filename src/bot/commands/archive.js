@@ -2,7 +2,7 @@ const sa = require('superagent')
 
 module.exports = {
   func: async (message, suffix) => {
-    if (!suffix || isNaN(suffix)) return message.channel.createMessage('That isn\'t a valid suffix! Please provide any number between 5 and 1000 (10,000 if Patreon).')
+    if (!suffix || isNaN(suffix)) return message.channel.createMessage('That isn\'t a valid suffix! Please provide any number between 5 and 1000 .')
     const num = parseInt(suffix)
     if (num < 5 || num > 1000) return message.channel.createMessage('That number is invalid! Please provide any number between 5 and 1000 (10,000 if Patreon)')
     message.channel.getMessages({ limit: num }).then(messages => {
@@ -11,10 +11,11 @@ module.exports = {
         .post(process.env.PASTE_CREATE_ENDPOINT)
         .set('Authorization', process.env.PASTE_CREATE_TOKEN)
         .set('Content-Type', 'text/plain')
+	      .set('User-Agent', 'logger discord bot')
         .send(pasteString || 'No messages were able to be archived')
         .end((err, res) => {
           if (!err && res.statusCode === 200 && res.body.key) {
-            message.channel.createMessage(`<@${message.author.id}>, **${messages.length}** message(s) could be archived. Link: https://haste.logger.bot/${res.body.key}.txt`)
+            message.channel.createMessage(`<@${message.author.id}>, **${messages.length}** message(s) could be archived. Link: https://logger-discord-bot.toolforge.org/${res.body.key}.txt`)
           } else {
             global.logger.error(err, res.body)
             global.webhook.error('An error has occurred while posting to the paste website. Check logs for more.')
