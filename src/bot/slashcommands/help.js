@@ -41,7 +41,7 @@ module.exports = {
         embeds: [{
           title: 'Usage Guide',
           color: EMBED_COLORS.PURPLED_BLUE,
-          description: `**__How does ${global.bot.user.username} work for me?__**\nMost actions on Discord (ban, message edit, member join, etc) are available to be set individually or as a preset to any channel you choose and have \`Manage Webhook\` permissions in.\n\n**__To setup logging__**\nUse \`/setup\` in the text channel you want to have the selected events log to. Select \`via_presets\` (set many events at once - joinlog, messages, ...) or \`via_individual_event\` (configure logging individually). Once all the desired presets or events you want to log to the current channel are selected, close the selection box and the bot will start logging your selection of events. If you want more information about an event, select it using \`/help event\`\n\n*Is something not working?* See the requirements below to ensure success in configuring ${global.bot.user.username}. If you need additional help, join [my support server](https://discord.gg/ed7Gaa3).`,
+          description: `**__How does ${global.bot.user.username} work for me?__**\nMost actions on Discord (ban, message edit, member join, etc) are available to be set individually or as a preset to any channel you choose and have \`Manage Webhook\` permissions in.\n\n**__To setup logging__**\nUse \`/setup\` in the text channel you want to have the selected events log to. Select \`via_presets\` (set many events at once - joinlog, messages, ...) or \`via_individual_event\` (configure logging individually). Once all the desired presets or events you want to log to the current channel are selected, close the selection box and the bot will start logging your selection of events. If you want more information about an event, select it using \`/help event\`\n\n*Is something not working?* See the requirements below to ensure success in configuring ${global.bot.user.username}. If you need additional help, ask beef.w.`,
           fields: [{
             inline: true,
             name: '__Permissions: Logging member joins__',
@@ -70,7 +70,7 @@ module.exports = {
           color: EMBED_COLORS.PURPLED_BLUE,
           footer: getEmbedFooter(global.bot.user),
           author: getAuthorField(interaction.member.user),
-          description: `__**Description**__\n${EVENT_HELP[eventName]}\n\n*Not what you're looking for? Join the [support server](https://discord.gg/ed7Gaa3)*.`
+          description: `__**Description**__\n${EVENT_HELP[eventName]}\n\n*Not what you're looking for? Ask beef.w*.`
         }],
         flags: Eris.Constants.MessageFlags.EPHEMERAL
       })

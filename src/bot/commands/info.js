@@ -21,11 +21,11 @@ module.exports = {
         fields: [
           {
             name: 'Technical Details',
-            value: `${global.bot.user.username} is written in JavaScript utilizing the Node.js runtime. It uses the [eris](https://github.com/abalabahaha/eris) library to interact with the Discord API. PostgreSQL and Redis are used. I am OSS at https://github.com/curtisf/logger`
+            value: `${global.bot.user.username} is written in JavaScript utilizing the Node.js runtime. It uses the [eris](https://github.com/abalabahaha/eris) library to interact with the Discord API. PostgreSQL and Redis are used. I am OSS at https://github.com/fee1-dead/wikilogger`
           },
           {
             name: 'The Author',
-            value: 'Logger is developed and maintained by [piero#5432](https://github.com/curtisf). You can contact him via my [home server](https://discord.gg/ed7Gaa3).'
+            value: 'Logger is maintained by [beef](https://github.com/fee1-dead). You can contact them via discord: `beef.w`.'
           },
           {
             name: 'Bot Info',
@@ -37,7 +37,7 @@ module.exports = {
           },
           {
             name: 'Privacy Policy',
-            value: 'You can view the privacy policy [here](https://gist.github.com/curtisf/0598b0930c11363d24e29300cf21d572). Similarly, if you want updates on when it changes, join my support server and follow the #privacy-policy channel.'
+            value: 'You can view the privacy policy [here](https://github.com/fee1-dead/wikilogger/blob/main/PRIVACY.md).'
           }
         ]
       }]
